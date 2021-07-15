@@ -1,0 +1,10 @@
+.page{
+  background-image: url(background.jpg);
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+form{
+perspective: 100px;
+}
