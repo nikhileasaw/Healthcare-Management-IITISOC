@@ -1,4 +1,4 @@
-const homeController = require("../controllers/homecontroler");
+const homeController = require("../controllers/homecontroller");
 
 const initRoutes = (app) => {
   // routes
