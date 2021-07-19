@@ -29,6 +29,12 @@ body {
   color: white;
 }
 
+#fakeimg{
+  /* height: 100px; */
+  overflow: hidden;
+
+}
+
 #h{
   margin: 5px;
   padding: 5px;
@@ -121,12 +127,16 @@ body {
   background-color: white;
   padding: 20px;
 }
+.F{
+  width: 1020px;
+}
 
-/* Fake image, just for this example */
+
 .fakeimg {
   background-color: #aaa;
   width: 100%;
-  padding: 20px;
+  padding: 10px;
+  overflow: hidden;
 }
 
 /* Footer */
@@ -178,7 +188,7 @@ body {
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="../static/Screenshot (10).png " class="d-block w-100 image" alt="...">
+        <img src="../static/Screenshot (10).png" class="d-block w-100 image" alt="...">
       </div>
       <div class="carousel-item">
         <img src="../static/Screenshot (4).png" class="d-block w-100 image" alt="...">
@@ -205,6 +215,7 @@ body {
   <a href="#">SUGGESTIONS</a>
   <a href="#">CONTACT US</a>
   <a href="#" class="right">LOGIN</a>
+  <a href="#" class="right">SIGNUP</a>
 </div>
 
 <div class="row">
@@ -220,9 +231,9 @@ body {
   </div>
   <div class="main">
     <h2>ABOUT US</h2>
-    <div class="fakeimg" style="height:200px;">Image</div>
+    <div class="fakeimg"><div id="fakeimg"><img class="F" src="../static/Screenshot (2).png" alt=""></div></div>
     <p>The Health Centre of the Indian Institute of Technology Indore provides dedicated health services to the institute community comprising of students, employees, their dependents and Institute Guests. The Health Centre offers Outpatient, Day care, Trauma and Emergency Care.</p>
-    <p>health care centre in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
     <br>
     <h2>SERVICES WE PROVIDE</h2>
     <!-- <h5>Title description, Sep 2, 2017</h5> -->
