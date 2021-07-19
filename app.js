@@ -1,9 +1,14 @@
 const express = require("express");
 const path = require("path");
+const bodyParser=require("body-parser");
+const mongoose=require('mongoose');
 const app = express();
 
 
+
+
 // assests
+app.use(bodyParser.json());
 app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

@@ -21,6 +21,10 @@ const initRoutes = (app) => {
   app.get('/doctorlogin',(req,res)=>{
     res.render("doctorlogin");
   });
+  app.post('/login/registereduser'), async (req,res)=>{
+    console.log(req.body);
+    res.json(status:'okay')
+  });
   //login part ends
   app.use((req,res)=>{res.render("error");
   });
