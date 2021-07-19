@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="loginstyles.css">
+</head>
+
+<body >
+   <div class="row">
+     <form class="admin span-4" action="/adminlogin" method="get">
+       <div class="imageconatainer">
+         <img class="imageavatar" src="admin.png" alt="admin avatar">
+         <h5 class="sectionname">ADMIN</h5>
+         <button type="submit" name="button" post="/admin">View</button>
+       </div>
+     </form>
+       <form class="patient span-4" action="/patientlogin" method="get">
+         <div  class="imageconatainer">
+           <img class="imageavatar" src="patient.jpg" alt="admin avatar">
+           <h5 class="sectionname">PATIENT</h5>
+           <button type="submit" name="button" post="/admin">View</button>
+         </div>
+       </form>
+     <form class="doctor span-4 " action="doctorlogin" method="post">
+       <div  class="imageconatainer">
+         <img class="imageavatar" src="doctor.jpg" alt="admin avatar">
+         <h5 class="sectionname">DOCTOR</h5>
+         <button type="submit" name="button" post="/admin">View</button>
+       </div>
+     </form>
+   </div>
+
+
+</body>
+
+</html>

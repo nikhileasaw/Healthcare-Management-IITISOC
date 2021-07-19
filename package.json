@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "k",
   "version": "1.0.0",
   "description": "",
@@ -14,4 +15,29 @@
     "express": "^4.17.1",
     "nodemon": "^2.0.12"
   }
+=======
+  "name": "healthcare-management-iitisoc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikhileasaw/Healthcare-Management-IITISOC.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nikhileasaw/Healthcare-Management-IITISOC/issues"
+  },
+  "homepage": "https://github.com/nikhileasaw/Healthcare-Management-IITISOC#readme"
+>>>>>>> 0f950920287702f1145a5e6da42518feec4ef24a
 }
