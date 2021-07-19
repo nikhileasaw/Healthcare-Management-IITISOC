@@ -3,9 +3,16 @@ const path = require("path");
 const bodyParser=require("body-parser");
 const mongoose=require('mongoose');
 const app = express();
+mongoose.connect("mongodb+srv://admin:admin@useridpassword.hgsdp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{useNewUrlParser: true, useUnifiedTopology: true});
+const db=mongoose.connection;
+db.on('error',console.error.bind(console,'connection error:'));
+db.once('open',function(){
 
-
-
+});
+const authenticaton=new mongoose.Schema({
+  username:String,
+  password:String
+});
 
 // assests
 app.use(bodyParser.json());
