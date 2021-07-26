@@ -1,46 +1,51 @@
 // creating middleware
 const express = require("express");
-const app = express();
-const bodyParser=require("body-parser");
+const session=require('express-session');
+const passportSetup=require('./config/passport-setup');
 const mongoose=require('mongoose');
 const flash=require('connect-flash');
 const morgan=require('morgan');
-const passport=require("passport");
-const session=require('express-session');
-const cookieParser=require('cookie-parser');
+const user=require('./models/user');
+const authRoutes=require('./routes/authRoutes');
 const path=require('path');
+const keys=require('./config/keys');
+const cookieSession=require('cookie-session');
+const passport=require('passport');
+const profileRoutes=require('./routes/patientprofile-routes')
 
-
+const app = express();
 //connecting to database
-mongoose.connect("mongodb+srv://admin:admin@useridpassword.hgsdp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{useNewUrlParser: true, useUnifiedTopology: true});//connected to the external database
-
-
+mongoose.connect(keys.mongodb.dbURI,{useNewUrlParser: true,useUnifiedTopology: true})
+.then((result)=>{console.log("connected to db")})
+.catch((err)=>{console.log(err)});
 //setting up express application
 app.use(morgan('dev'));//logs request to console
-app.use(cookieParser());//reads cookies
-app.use(bodyParser());//recieves information from forms
+
 
 app.set("view engine", "ejs");//setting up ejs
 
-//setting up passport
-app.use(session({secret:'thesecret'}));//session secret
-app.use(passport.initialize());
-app.use(passport.session());//persistent login session
-app.use(flash());//use connect-flash to flash messages stored in session
-
-//setting up routes
-require(path.join(__dirname, "/routes/web"))(app);
-require('./config/passport');
 
 
 // set template engine
+app.use(cookieSession({
+  maxAge:24*60*60*1000,
+  keys:[keys.session.cookieKey]
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(express.static("public"));
+app.use('/static', express.static(__dirname + '/public'));
 app.set("views", path.join(__dirname, "/views"));
+app.use('/auth',authRoutes);
+app.use('/profile',profileRoutes);
+require(path.join(__dirname,"/routes/web"))(app);
+
 
 
 // assests
-app.use(express.static("public"));
+
 app.use(express.urlencoded({ extended: false }));
-app.use('/static', express.static(__dirname + '/public'));
+
 
 
 
