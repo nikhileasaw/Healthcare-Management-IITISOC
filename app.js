@@ -12,6 +12,9 @@ const keys=require('./config/keys');
 const cookieSession=require('cookie-session');
 const passport=require('passport');
 const profileRoutes=require('./routes/patientprofile-routes')
+// Kirtika
+const bodyParser = require("body-parser");
+const Entry = require('./models/entry')
 
 const app = express();
 //connecting to database
@@ -49,10 +52,10 @@ app.use(express.urlencoded({ extended: false }));
 
 
 
-
 // routes
 
 
 app.listen(3000, () => {
   console.log("app now listening for requests on port 3000");
 });
+
