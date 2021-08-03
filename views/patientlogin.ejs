@@ -6,35 +6,39 @@
   <title></title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="login.css">
+  <style media="screen">
+    .avatar {
+      align-items: center;
+      margin-bottom: 1%;
+    }
+
+    .center{
+
+      width:50%;
+      background-color:lightblue;
+    }
+    body {
+      background-image: url('iitindorehospital.jpg');
+      background-repeat: repeat-n;
+      background-size: cover;
+    }
+  </style>
 </head>
 
-<body class="page">
-  <fieldset class=" px-5 py-5 loginbox">
-    <h1>Welcome </h1>
-    <form class="border border-warning px-5 py-5 float-left" id="patient-login">
-      <div class="mb-3">
-        <label class="form-label" for="Username">Username</label>
-        <input class="form-control" type="text" id="username" name="username" value="" required>
-      </div>
-      <div class="mb-3">
-        <label for="password">Password</label>
-        <input class="form-control" id="password" type="text" name="password" value="" required>
-      </div>
-      <div class="">
-        <input type="checkbox" name="" value="">
-        <label for="">remember me</label>
-        <a class="float-right" href="#">Forgot password</a>
-      </div>
-      <button class="btn btn-danger btn-lg" type="submit">Login</button>
+<body>
 
-
-      <div class="float-right">
-        <label for="">Don't have an account?</label><a color:"#ff0000" href="/signup">Sign Up</a>
+  <div class="container centre" color="">
+    <div class="center border border-warning px-5 py-5 float-middle">
+      <form class="" id="patient-login" method='post'>
+        <div class="avatar align-center">
+          <img src="iitilogo.png" alt="">
+        </div>
+      </form>
+      <div class="googlestrategy">
+        <a href="/auth/google"><button class="btn btn-lg btn-google btn-block text-uppercase btn-outline " type="submit"><img src="https://img.icons8.com/color/16/000000/google-logo.png" alt=""> LOGIN WITH GOOGLE</button></a>
       </div>
-    </form>
-
-    <a href="/auth/google"><button class="btn btn-danger btn-lg" type="submit">Signup with google</button></a>
-  </fieldset>
+    </div>
+  </div>
 
 </body>
 

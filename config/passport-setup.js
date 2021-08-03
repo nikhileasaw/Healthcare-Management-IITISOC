@@ -19,6 +19,8 @@ passport.use(
     clientSecret: keys.google.clientSecret
   }, (accessToken, refreshToken, profile, done) => {
     //check if user exits
+    if(profile._json.hd==="iiti.ac.in")
+    {
     user.findOne({
       googleid: profile.id
     }).then((currentUser) => {
@@ -28,7 +30,8 @@ passport.use(
       } else {
         new user({
           username: profile.displayName,
-          googleid: profile.id
+          googleid: profile.id,
+          email:profile._json.email
         }).save().then((newUser) => {
           console.log('new user created' + newUser);
           done(null,newUser);
@@ -36,6 +39,9 @@ passport.use(
 
       }
     })
-
+  }
+  else{
+    done(new Error("Invalid host domain"));
+  }
   })
 );

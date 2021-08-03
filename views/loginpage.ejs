@@ -9,23 +9,33 @@
 </head>
 
 <body >
-   <div class="container box align-items-center">
-     <div class="row align-items-center">
-       <form class="admin col " action="/adminlogin" method="get">
+
+  <nav class="navbar">
+    <a  href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Suggestions</a>
+    <a href="#">Contact Us</a>
+    <a href="#">Login</a>
+  </nav>
+<div class="container">
+
+
+     <div class="row align-items-center box">
+       <form class="admin col-lg-4 " action="/adminlogin" method="get">
          <div class="imageconatainer">
-           <img class="imageavatar" src="admin.png" alt="admin avatar">
+           <img class="imageavatar" src="admin.jpg" alt="admin avatar">
            <h5 class="sectionname">ADMIN</h5>
            <button type="submit" name="button" post="/admin">View</button>
          </div>
        </form>
-         <form class="patient col " action="/patientlogin" method="get">
+         <form class="patient col-lg-4" action="/patientlogin" method="get">
            <div  class="imageconatainer">
-             <img class="imageavatar" src="Patient-Role.jpg" alt="admin avatar">
+             <img class="imageavatar" src="patient.jpg" alt="admin avatar">
              <h5 class="sectionname">PATIENT</h5>
              <button type="submit" name="button" post="/admin">View</button>
            </div>
          </form>
-       <form class="doctor col " action="doctorlogin" method="post">
+       <form class="doctor col-lg-4" action="doctorlogin" method="post">
          <div  class="imageconatainer">
            <img class="imageavatar" src="doctor.jpg" alt="admin avatar">
            <h5 class="sectionname" color="gold">DOCTOR</h5>
@@ -33,9 +43,9 @@
          </div>
        </form>
      </div>
-     </div>
 
 
+</div>
 
 
 </body>

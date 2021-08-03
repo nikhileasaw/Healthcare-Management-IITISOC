@@ -8,6 +8,9 @@ const checkAuth=(req,res,next)=>{
   }
 }
 router.get('/',(req,res)=>{
-  res.render('patientprofile',{patient:req.user});
+  res.render('patientprofile',{user:req.user});
+});
+router.get('/appoinment',(req,res)=>{
+  res.render('appoinment');
 });
 module.exports=router;

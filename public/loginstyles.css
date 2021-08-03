@@ -1,17 +1,17 @@
 body{
-  background-image: url(loginlandingpage.jpg);
+  background-image: url(loginlandingpage6.jpg);
 
   background-size: cover;
-  margin: 200px 300px 100px;
+
 }
 div{
   display: inline-block;
-  background-color: rgba(0,0,0,0.5);
+
 
 }
 form{text-align: center;
   width:auto;
-  background-color: rgba(0,0,0,0)
+  background-color: rgba(0,0,0,0);
   padding: 20px 10px 10px;
 border:2px 2px 2px 2px solid gold ;
 }
@@ -34,13 +34,27 @@ button:hover {
   opacity: 0.3;
 }
 .imageavatar{
-width:250px;
-height: :500%;
+  width:250px;
+  height: :500%;
 }
 .imageconatainer{
   text-align:center;
 }
+
+.sectionname{
+  color: red;
+}
+.navbar {
+  overflow: hidden;
+  /* background-color: #333; */
+  background-color: rgba(0,0,0,0.8);
+}
+.container{
+  margin: 5% 20% 20%;
+
+}
 .box{
-  height:500px;
-  padding: 50px 50px 50px 50px;
+
+  background-color: rgba(0,0,0,0.3);
+  margin:10% 10% 10% 10%;
 }

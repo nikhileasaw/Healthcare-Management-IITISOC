@@ -25,19 +25,7 @@ app.get('/logout', (req, res) => {
   req.logout();
   res.redirect('/login');
 });
-app.post('/signup', (req, res) => {
-  const newuser = new user({
-    username: 'first user',
-    password: 'password1'
-  });
-  newuser.save()
-    .then((result) => {
-      res.send(result)
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-})
+
 app.post('/patientlogin',(req,res)=>{
 res.render('patientlogin')});
 //login part ends
