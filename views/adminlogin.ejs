@@ -11,7 +11,7 @@
 <body class="page">
   <fieldset class=" px-5 py-5">
     <h1>Welcome Admin</h1>
-    <form class="border border-warning px-5 py-5 " action="index.html" method="post">
+    <form class="border border-warning px-5 py-5 " action="/auth/adminlogin" method="post">
       <div class="mb-3">
         <label class="form-label" for="Username">Username</label>
         <input class="form-control" type="text" name="username" value="" required>
@@ -26,6 +26,7 @@
         <a class="float-right" href="#">Forgot password</a>
       </div>
       <button class="btn btn-danger btn-lg" type="button" name="button">Login</button>
+      <a href="/auth/signup">Signup</a>
     </form>
   </fieldset>
 

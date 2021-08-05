@@ -3,7 +3,7 @@ const Schema=mongoose.Schema;
 const userauthentication=new Schema({
   username:String,
   googleid:String,
-  email:String
+  email:String,
 });
 const user=mongoose.model('usernamepassword',userauthentication);
 module.exports=user;
