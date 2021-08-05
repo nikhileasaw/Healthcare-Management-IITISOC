@@ -32,9 +32,11 @@ body {
 #fakeimg{
   /* height: 100px; */
   overflow: hidden;
+  /* width: 200px; */
 
 }
 
+#h{
   margin: 5px;
   padding: 5px;
   z-index: 5;
@@ -103,8 +105,7 @@ body {
 }
 
 /* Column container */
-
-.row {
+.row {  
   display: -ms-flexbox; /* IE10 */
   display: flex;
   -ms-flex-wrap: wrap; /* IE10 */
@@ -121,22 +122,49 @@ body {
 }
 
 /* Main column */
-.main {
--ms-flex: 70%; /* IE10 */
+.main {   
+  -ms-flex: 70%; /* IE10 */
   flex: 70%;
   background-color: white;
   padding: 20px;
 }
 .F{
-  width: 1020px;
+  width: 67.25vw;
+}
+.FA{
+  width: 27vw;
+  position: relative;
+  top: -2px;
 }
 
+/* .tfa{
+  width: 20vw;
+} */
+.firstaid{
+  font-size: 17px;
+}
+.SE{
+  width: 28vw;
+      
+}
+.fo{
+  font-size: 18px;
+}
 
 .fakeimg {
-  background-color: #aaa;
+  background-color: #023b70;
   width: 100%;
   padding: 10px;
   overflow: hidden;
+  /* vertical-align: middle; */
+}
+.fakeimg1{
+  background-color: #023b70;
+  width: 100%;
+  padding: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
 }
 
 /* Footer */
@@ -148,7 +176,7 @@ body {
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
-  .row {
+  .row {   
     flex-direction: column;
   }
 }
@@ -189,7 +217,6 @@ body {
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="../static/Screenshot (10).png" class="d-block w-100 image" alt="...">
-
       </div>
       <div class="carousel-item">
         <img src="../static/Screenshot (4).png" class="d-block w-100 image" alt="...">
@@ -207,44 +234,66 @@ body {
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-
+  
+</div>
 
 <div class="navbar">
   <a href="#">HOME</a>
   <a href="#">ABOUT</a>
   <a href="#">SUGGESTIONS</a>
   <a href="#">CONTACT US</a>
-  <a href="./login" class="right">LOGIN</a>
-
+  <a href="#" class="right">LOGIN</a>
+  <a href="#" class="right">SIGNUP</a>
 </div>
-
-
 
 <div class="row">
   <div class="side">
+    <h2>First Aid</h2>
+    <div class="fakeimg" style="height:200px;"><div class="mar"><img class="FA" src="../static/fa.png" alt=""></div></div>
+    <div class="firstaid">
+    <p>Step 1:Identify mitigate potential dangers<br>
+      Step 2: Call for help<br>
+      Step 3: Check for a response<br>
+      Step 4: Check the casualty's airway<br>
+      Step 5: Check the casualty is breathing<br>
+      Step 6: Check the casualty's circulation</p>
+    </div>
     <h2>Some Basic Health Care Tips</h2>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-    <h3>More Text</h3>
-    <p>Lorem ipsum dolor sit ame.</p>
+    <div class="firstaid">
+    <p>1.Eat a variety of foods.<br>
+      2.Base your diet on plenty of foods rich in carbohydrates.<br>
+      3.Replace saturated with unsaturated fat.<br>
+      4.Enjoy plenty of fruits and vegetables.<br>
+      5.Reduce salt and sugar intake.<br>
+      6.Eat regularly, control the portion size.<br>
+      7.Drink plenty of fluids.<br>
+      8.Maintain a healthy body weight.<br>
+      9.Get on the move, make it a habit!<br>
+      <!-- 10.Check your blood pressure regularly.<br> -->
+      10.Get tested.<br>
+      11.Start now! And keep changing gradually.</p></div>
+    <!-- <p>Lorem ipsum dolor sit ame.</p> -->
+    <!-- <div class="fakeimg" style="height: 200px;"><img class="tfa" src="../static/tfa1.png" alt=""></div><br> -->
+    <!-- <div class="fakeimg" style="height:60px;">Image</div><br>
     <div class="fakeimg" style="height:60px;">Image</div><br>
     <div class="fakeimg" style="height:60px;">Image</div><br>
-    <div class="fakeimg" style="height:60px;">Image</div>
+    <div class="fakeimg" style="height:60px;">Image</div><br>
+    <div class="fakeimg" style="height:60px;">Image</div> -->
   </div>
   <div class="main">
     <h2>ABOUT US</h2>
     <div class="fakeimg"><div id="fakeimg"><img class="F" src="../static/Screenshot (2).png" alt=""></div></div>
-    <p>The Health Centre of the Indian Institute of Technology Indore provides dedicated health services to the institute community comprising of students, employees, their dependents and Institute Guests. The Health Centre offers Outpatient, Day care, Trauma and Emergency Care.</p>
-    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    <br>
+    <div class="fo"><br><p>The Health Centre of the Indian Institute of Technology Indore provides dedicated health services to the institute community comprising of students, employees, their dependents and Institute Guests. The Health Centre offers Outpatient, Day care, Trauma and Emergency Care.</p>
+    <p>We provide high quality health care services to the students, faculty and staff of IIT Indore with unrelenting attention to clinical excellence, patient satisfaction and patient safety. We also tend to provide facilities and amenities that promote the quality care, afford solace and enhance the entitled community.
+    </p></div>
+
     <h2>SERVICES WE PROVIDE</h2>
     <!-- <h5>Title description, Sep 2, 2017</h5> -->
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text..</p>
+    <div class="fakeimg1" style="height:200px;"><img class="SE"src="../static/pharmacy.png" alt=""><img class="SE" src="../static/Dental.png" alt=""></div><div class="fo">
+    <p>We the high quality services, updating ourselves providing the best health care support..</p>
     <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-  </div>
+  </div></div>
 </div>
-
 
 <div class="footer">
   <h2>Footer</h2>
