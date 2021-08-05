@@ -11,21 +11,21 @@
 <body class="page">
   <fieldset class=" px-5 py-5">
     <h1>Welcome Admin</h1>
-    <form class="border border-warning px-5 py-5 " action="/auth/adminlogin" method="post">
+    <form class="border border-warning px-5 py-5 " action="/auth/adminlogin" method="POST">
       <div class="mb-3">
         <label class="form-label" for="Username">Username</label>
-        <input class="form-control" type="text" name="username" value="" required>
+        <input class="form-control" type="text" name="uname" value="" required>
       </div>
       <div class="mb-3">
         <label for="password">Password</label>
-        <input class="form-control" type="text" name="password" value="" required>
+        <input class="form-control" type="text" name="pw" value="" required>
       </div>
       <div class="">
         <input type="checkbox" name="" value="">
         <label for="">remember me</label>
         <a class="float-right" href="#">Forgot password</a>
       </div>
-      <button class="btn btn-danger btn-lg" type="button" name="button">Login</button>
+      <button class="btn btn-primary btn-lg" type="submit" name="button">Login</button>
       <a href="/auth/signup">Signup</a>
     </form>
   </fieldset>

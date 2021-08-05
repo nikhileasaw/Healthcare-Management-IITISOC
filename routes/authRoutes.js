@@ -38,5 +38,8 @@ router.get('/google/redirect',passport.authenticate('google'),(req,res)=>{
   res.redirect('/profile/')
 });
 //auth with localStrategy
-router.post('/adminlogin',passport.authenticate('local',{failureRedirect:"/login-failure",SuccessRedirect:"/adminprofile"}));
+router.post('/adminlogin',passport.authenticate('local',{failureRedirect:"/error",successRedirect:"/auth/adminprofile"}));
+router.get('/adminprofile',(req,res)=>{
+  res.render('adminprofile');
+});
 module.exports=router;

@@ -1,7 +1,9 @@
 const homeController = require("../controllers/homecontroller");
 const user=require('../models/user');
-const Entry = require('../models/entry')
+const Entry = require('../models/entry');
+const admin=require('../models/admin');
 const bodyParser = require("body-parser");
+const passport=require('passport');
 // routes
 const initRoutes=(app)=>{
 // create home route
@@ -38,6 +40,8 @@ app.get('/addform',(req,res) =>{
 app.get('/info',(req,res) =>{
   res.render('index');
 })
+app.post('/adminlogin',passport.authenticate('local',{failureRedirect:"/login-failure",SuccessRedirect:"/adminprofile"}));
+
 app.post("/addform",function(req,res){
   console.log(req.body.name);
   var entry = new Entry({
