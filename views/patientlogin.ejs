@@ -7,38 +7,111 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="login.css">
   <style media="screen">
+    body {
+ background-image: url("bPL.jpg");
+ background-color: #cccccc;
+ background-size: cover;
+}
+    .border-warning {
+    border-color: #023b70!important;
+}
+    .navbar {
+    overflow: hidden;
+    /* background-color: #333; */
+    background-color: #0359a8;
+  }
+  .navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+  }
+  .navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  @media screen and (max-width: 400px) {
+    .navbar a {
+      float: none;
+      width: 100%;
+    }
+  }
+  
+  /* .footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+  } */
+  .footer {
+    padding: 12px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:#ddd;
+    color:black;
+    text-align: center;
+  }
     .avatar {
       align-items: center;
       margin-bottom: 1%;
     }
 
     .center{
+      
+  margin: auto;
+  margin-top: 84px;
+  width: 50%;;
+  padding: 10px;
 
-      width:50%;
-      background-color:lightblue;
+     
+      /* background-color:lightblue; */
     }
     body {
-      background-image: url('iitindorehospital.jpg');
+      /* background-image: url('iitindorehospital.jpg'); */
       background-repeat: repeat-n;
       background-size: cover;
+    }
+    .logo{
+      display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
     }
   </style>
 </head>
 
 <body>
+  <div class="navbar">
+    <a href="#">HOME</a>
+    <a href="#">ABOUT</a>
+    <a href="#">SUGGESTIONS</a>
+    <a href="#">CONTACT US</a>
+    <a href="/login" class="right">LOGIN</a>
+    <a href="#" class="right">SIGNUP</a>
+  </div>
 
   <div class="container centre" color="">
     <div class="center border border-warning px-5 py-5 float-middle">
       <form class="" id="patient-login" method='post'>
         <div class="avatar align-center">
-          <img src="iitilogo.png" alt="">
+          <div class="logo"><img style="height:200px;" src="ii.png" alt=""></div>
         </div>
+        <br>
       </form>
       <div class="googlestrategy">
         <a href="/auth/google"><button class="btn btn-lg btn-google btn-block text-uppercase btn-outline " type="submit"><img src="https://img.icons8.com/color/16/000000/google-logo.png" alt=""> LOGIN WITH GOOGLE</button></a>
       </div>
     </div>
   </div>
+
+  <div class="footer">
+    <h2>Footer</h2>
+  </div>
+
 
 </body>
 
