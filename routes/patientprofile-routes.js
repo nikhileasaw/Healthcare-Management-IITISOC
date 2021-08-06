@@ -1,6 +1,7 @@
 const router=require('express').Router();
 const bodyParser = require("body-parser");
 const patientProfile = require('../models/patientprofile');
+const Entry = require('../models/entry');
 const user = require('../models/user');
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: false }));
@@ -16,7 +17,11 @@ router.get('/',(req,res)=>{
   res.render('patientprofile',{user:req.user});
 });
 router.get('/appoinment',(req,res)=>{
-  res.render('appoinment');
+  Entry.find({}, function(err,data)
+{
+  entry=data;
+    res.render('appoinment',{'doctor':data});
+});
 });
 router.get('/updateprofile',(req,res)=>{
   res.render('updateprofile',{user:req.user});

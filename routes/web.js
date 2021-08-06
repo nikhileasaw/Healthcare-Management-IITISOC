@@ -38,8 +38,13 @@ app.get('/addform',(req,res) =>{
   res.render('addform');
 })
 app.get('/info',(req,res) =>{
-  res.render('index');
-})
+  Entry.find({}, function(err,data)
+{
+  entry=data;
+  console.log("abc");
+    res.render('index',{'a':data});
+});
+});
 app.post('/adminlogin',passport.authenticate('local',{failureRedirect:"/login-failure",SuccessRedirect:"/adminprofile"}));
 
 app.post("/addform",function(req,res){
