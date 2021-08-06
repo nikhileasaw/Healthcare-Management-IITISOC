@@ -12,7 +12,6 @@ const keys=require('./config/keys');
 const cookieSession=require('cookie-session');
 const passport=require('passport');
 const profileRoutes=require('./routes/patientprofile-routes')
-
 // Kirtika
 const bodyParser = require("body-parser");
 const Entry = require('./models/entry')
