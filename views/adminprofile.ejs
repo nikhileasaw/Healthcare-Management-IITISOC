@@ -47,14 +47,14 @@
     background-color: #ddd;
     color: black;
   }
-  
+
   @media screen and (max-width: 400px) {
     .navbar a {
       float: none;
       width: 100%;
     }
   }
-  
+
   /* .footer {
     padding: 20px;
     text-align: center;
@@ -96,8 +96,8 @@
     <fieldset class=" px-5 py-5">
       &nbsp;&nbsp;
       <div class="hi"><h2>LOGIN SUCCESSFUL</h2></div>
-    
-    <form class="border border-warning px-4 py-4 " action="/auth/adminprofile" method="POST">
+
+    <form class="border border-warning px-4 py-4 " action="/index" method="POST">
     <!-- <div class="mb-3">
       <label class="form-label" for="Username">Username</label>
       <input class="form-control" type="text" name="uname" value="" required>
@@ -105,12 +105,13 @@
     <div class="ad">
     <button class="btn btn-primary btn-lg" type="submit" name="button">Add Doctors</button>
   </div>
-     <br>&nbsp;&nbsp; 
+     <br>&nbsp;&nbsp;
      <div class="divider">
     <button class="btn btn-primary btn-lg" type="submit" name="button">logout</button>
   </div>
     <!-- <a href="/logout" class="">Logout</a>
     <a href="/addform"> ADD Doctors</a> -->
+    <a href="/profile/bookedappoinments">appoinments</a>
   </form>
   </fieldset>
   <div class="footer">

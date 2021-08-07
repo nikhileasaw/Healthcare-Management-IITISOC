@@ -15,21 +15,29 @@
     <h3 class="col"> <a href="" class="">Medical History</a></h3>
     <h3 class="col"> <a href="/logout" class="">Logout</a></h3>
   </nav>
-    <form class="" action="index.html" method="post">
+    <% if(message.length>0){ %>
+      <div class="alert alert-success">
+            <%=message%>
+      </div>
+  <%}%>
+    <form class="" action="/profile/appoinment" method="post">
       <label for="">Select a  date:</label>
       <input type="date" name="date" value="">
-      <label for="">Select a department</label>
-      
+
       <label for="">Select a doctor:</label>
-      <select class="" name="doctor">
+      <input  name="doctor" value=""list="doctorlist">
+      <datalist class="" id='doctorlist'>
         <% doctor.forEach(function(entry){ %>
 
-          <option value=""><%= entry.name %></option>
+          <option value="<%= entry.name %>"></option>
 
         <% }) %>
-      </select>
+      </datalist>
+
+      <input type="text" name="name" value=<%=user.username%> style="display:none">
       <label for="">Description of illness</label>
-      <input type="text" name="" value="">
+      <input type="text" name="desc" value="">
+      <button type="submit" name="button">Book Appoinment</button>
     </form>
 </body>
 
