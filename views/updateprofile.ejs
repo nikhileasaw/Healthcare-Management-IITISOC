@@ -9,6 +9,10 @@
 
   <style>
     body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+    body {
  background-image: url("bUP.jpeg");
  /* background-color: #cccccc; */
  background-size: cover;
@@ -17,7 +21,7 @@
         width: 500px;
         /* margin: auto; */
         /* padding: 10px; */
-        margin-top: 45px;
+        margin-top: 30px;
       }
       .border-warning {
     border-color: #023b70!important;
@@ -50,8 +54,13 @@
     }
   }
   .nv{
-    font-size: 10px;
+    font-size: 15px;
+    line-height: 50 px;
   }
+  .nv a.right {
+  float: right;
+}
+
 
   .footer {
     padding: 12px;
@@ -71,12 +80,13 @@
 <body>
   <div class="nv">
   <nav class='row'>
-    <h4 class="col"> <a href="/profile" class="">PROFILE</a></h4>
-    <h4 class="col"> <a href="/profile/updateprofile">UPDATE PROFILE</a></h4>
-    <h4 class="col"> <a href="/profile/appoinment">BOOK APPOINMENT</a></h4>
-    <h4 class="col"> <a href="" class="">MEDICAL HISTORY</a></h4>
-    <h4 class="col"> <a href="/logout" class="">LOGOUT</a></h4>
-  </nav></div>
+    <div class="col">
+     <a href="/profile" class="">PROFILE</a>
+     <a href="/profile/appoinment">BOOK APPOINMENT</a>
+     <a href="/profile/updateprofile">UPDATE PROFILE</a>
+     <a href="" class="">MEDICAL HISTORY</a>
+     <a href="/logout" class="">LOGOUT</a>
+  </nav></div></div>
 
   <fieldset class=" px-4 py-4">
     <form class="border border-warning px-4 py-4 " action="/auth/adminprofile" method="POST">
