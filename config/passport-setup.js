@@ -57,14 +57,17 @@ passport.use(
       }).then((currentUser) => {
         if (currentUser) {
           console.log('user is:', currentUser);
+          console.log(profile);
           done(null, currentUser);
         } else {
           new user({
             username: profile.displayName,
             googleid: profile.id,
-            email: profile._json.email
+            email: profile._json.email,
+            picture:profile._json.picture
           }).save().then((newUser) => {
             console.log('new user created' + newUser);
+            console.log(profile);
             done(null, newUser);
           });
 

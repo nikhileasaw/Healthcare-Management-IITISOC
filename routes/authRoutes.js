@@ -35,7 +35,7 @@ router.get('/google',passport.authenticate('google',{
   scope:['profile','email']
 }));
 router.get('/google/redirect',passport.authenticate('google'),(req,res)=>{
-  res.redirect('/profile/')
+  res.redirect('/profile/updateprofile');
 });
 //auth with localStrategy
 router.post('/adminlogin',passport.authenticate('local',{failureRedirect:"/error",successRedirect:"/auth/adminprofile"}));
