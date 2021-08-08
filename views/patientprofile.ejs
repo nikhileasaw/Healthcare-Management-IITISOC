@@ -82,8 +82,12 @@
           <h3><span class="fa fa-user"></span>Local</h3>
 
           <p>
+            <img src="<%=user.picture%>" alt="">
             <strong>NAME</strong>: <%= user.username %><br>
             <strong>ID</strong>:<%= user.email %> <br>
+            <strong>Alergy</strong>:<%=profile.alergies%><br>
+            <strong>Medication</strong>:<%=profile.permenantmedication%><br>
+            <strong>Date Of birth</strong>:<%=profile.dob%>
           </p>
 
         </div>

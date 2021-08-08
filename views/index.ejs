@@ -71,16 +71,11 @@
 </style>
 
 <div class="navbar">
-    <a href="#">HOME</a>
-    <a href="#">ABOUT</a>
+    <a href="/">HOME</a>
+    <a href="/info">DOCTORS</a>
     <a href="#">SUGGESTIONS</a>
     <a href="#">CONTACT US</a>
-  <<<<<<< HEAD
-    <a href="#" class="right">LOGIN</a>
-    <a href="#" class="right">SIGNUP</a>
-  =======
-    <a href="./login" class="right">LOGIN</a>
-  >>>>>>> 0f950920287702f1145a5e6da42518feec4ef24a
+    <a href="/login" class="right">LOGIN</a>
   </div>
 
 <body>
@@ -94,7 +89,7 @@
             </tr>
         </thead>
         <tbody>
-          
+
             <% a.forEach(function(entry,index){ %>
                 <tr>
                 <td><%= index+1 %></td>
@@ -104,7 +99,7 @@
            <%  }) %>
             </tbody>
     </table>
-   
+
 </body>
 
 </html>

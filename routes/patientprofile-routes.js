@@ -6,6 +6,8 @@ const patientProfile = require('../models/patientprofile');
 const Entry = require('../models/entry');
 const appoinment=require('../models/appoinment');
 const user = require('../models/user');
+var multer = require("multer");
+const storage = multer.memoryStorage()
 router.use(session({
   secret:'secret',
   cookie:{maxAge:60000},
@@ -24,7 +26,9 @@ const checkAuth=(req,res,next)=>{
   }
 }
 router.get('/',(req,res)=>{
-  res.render('patientprofile',{user:req.user});
+    patientProfile.find({"email":req.user.email}, function(err,data){
+      profile=data;
+  res.render('patientprofile',{user:req.user,'profile':data}) });
 });
 router.get('/appoinment',(req,res)=>{
   Entry.find({}, function(err,data)
@@ -38,8 +42,9 @@ router.post('/appoinment',(req,res)=>{
       name: req.body.name,
       doctor: req.body.doctor,
       date:req.body.date,
-      desc:req.body.desc
-  });
+      desc:req.body.desc,
+
+  })
 
   appnment.save(function(err,result){
       if (err){
@@ -64,22 +69,44 @@ router.get('/updateprofile',(req,res)=>{
 });
 // updating the profile of a patient if found or else creating a new patient profile
 router.post('/updateprofile',(req,res)=>{
-  Model
-  let patientprofile= new patientProfile({
-    email:req.body.email,
-    dob: req.body.dob,
-    alergies: req.body.alergy,
-    permenantmedication: req.body.permed,
-  })
-  patientprofile.save(function(err,result){
+var patientprofile= new patientProfile({
+      email:req.user.email,
+      dob:req.user.dob,
+      alergies:req.user.alergy,
+      permenantmedication:req.user.permed
+
+    })
+    patientprofile.save(function(err,result){
+        if (err){
+            console.log(err);
+        }
+        else{
+          res.redirect('/profile');
+            console.log(result);
+        }
+      });
+
+});
+
+
+  /*patientprofile.save(function(err,result){
       if (err){
           console.log(err);
       }
       else{
           console.log(result);
+          res.redirect('/profile');
       }
-    })
-        res.redirect('/profile');
+    })}
+    else
+    {
+      patientProfile.update({email:req.body.email,
+      dob: req.body.dob,
+      alergies: req.body.alergy,
+      permenantmedication: req.body.permed});
+      res.redirect('/profile');
+    }
 
 });
+});*/
 module.exports=router;
