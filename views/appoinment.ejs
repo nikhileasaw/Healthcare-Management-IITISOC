@@ -5,22 +5,121 @@
   <meta charset="utf-8">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <title></title>
+  <style>
+    .border-warning{
+        width: 500px;
+        /* height: 200px; */
+        /* margin: auto; */
+        /* padding: 10px; */
+        /* margin-top: 10px; */
+      }
+      .border-warning {
+    border-color: #023b70!important;
+}
+.nv {
+    overflow: hidden;
+    /* background-color: #333; */
+    background-color: #0359a8;
+    }
+    .nv a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+  }
+  .nv a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  @media screen and (max-width: 400px) {
+    .nv a {
+      float: none;
+      width: 100%;
+    }
+  }
+  .nv{
+    font-size: 10px;
+  }
+
+  .footer {
+    padding: 12px;
+    /* position: fixed; */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:#ddd;
+    color:black;
+    text-align: center;
+  }
+  textarea {
+  width: 100%;
+  height: 90px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+
+  </style>
 </head>
 
 <body>
-  <nav class='row'>
-    <h3 class="col"> <a href="/profile" class="">Profile</a></h3>
-    <h3 class="col"> <a href="#">Update profile</a></h3>
-    <h3 class="col"> <a href="/profile/appoinment">Book-appointment</a></h3>
-    <h3 class="col"> <a href="" class="">Medical History</a></h3>
-    <h3 class="col"> <a href="/logout" class="">Logout</a></h3>
-  </nav>
+  <div class="nv">
+    <nav class='row'>
+      <h4 class="col"> <a href="/profile" class="">PROFILE</a></h4>
+      <h4 class="col"> <a href="/profile/updateprofile">UPDATE PROFILE</a></h4>
+      <h4 class="col"> <a href="/profile/appoinment">BOOK APPOINMENT</a></h4>
+      <h4 class="col"> <a href="" class="">MEDICAL HISTORY</a></h4>
+      <h4 class="col"> <a href="/logout" class="">LOGOUT</a></h4>
+    </nav></div>
     <% if(message.length>0){ %>
       <div class="alert alert-success">
             <%=message%>
       </div>
   <%}%>
-    <form class="" action="/profile/appoinment" method="post">
+  <fieldset class=" px-5 py-5">
+    <form class="border border-warning px-4 py-4 " action="/auth/adminprofile" method="POST">
+
+  <form class="row g-3" action="/profile/updateprofile" method="post" >
+    <div class="row mb-3">
+    
+    <div class="">
+      <label for="inputEmail3">Select a doctor</label>
+      <input  name="doctor" value=""list="doctorlist" class="form-control" id="inputEmail3" value=<%=user.email %>>
+      <datalist class="" id='doctorlist'>
+        <% doctor.forEach(function(entry){ %>
+
+          <option value="<%= entry.name %>"></option>
+
+        <% }) %>
+      </datalist>
+    </div>
+  </div>
+  <div class="row mb-3">
+  <div class="">
+    <label for="">Select a  date</label>
+    <input type="date" class="form-control" name="date" value="">
+  </div></div>
+  <div class="row mb-3">
+    <div class="">
+      <input type="text" name="name" value=<%=user.username%> style="display:none">
+      <label for="">Description of illness</label>
+      <textarea id="" name="desc" rows="4" cols="50"class="form-control">
+      </textarea>
+    </div>
+    <br>
+     &nbsp;&nbsp; 
+  
+<button type="submit" class="btn btn-primary">BOOK APPOINMENT</button>
+
+</form></form>
+</fieldset>
+    
+    <!-- <form class="" action="/profile/appoinment" method="post">
       <label for="">Select a  date:</label>
       <input type="date" name="date" value="">
 
@@ -33,12 +132,16 @@
 
         <% }) %>
       </datalist>
-
-      <input type="text" name="name" value=<%=user.username%> style="display:none">
+ -->
+      <!-- <input type="text" name="name" value=<%=user.username%> style="display:none">
       <label for="">Description of illness</label>
       <input type="text" name="desc" value="">
       <button type="submit" name="button">Book Appoinment</button>
-    </form>
+    </form> -->
+    <div class="footer">
+      <h2>Footer</h2>
+      </div>
+    </body>
 </body>
 
 </html>

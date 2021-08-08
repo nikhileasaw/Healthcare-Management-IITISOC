@@ -5,29 +5,128 @@
   <title>Profile</title>
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
   <style>
     body {
+ background-image: url("bUP.jpeg");
+ /* background-color: #cccccc; */
+ background-size: cover;
+}
+    .border-warning{
+        width: 500px;
+        /* margin: auto; */
+        /* padding: 10px; */
+        margin-top: 45px;
+      }
+      .border-warning {
+    border-color: #023b70!important;
+}
+    /* body {
       padding-top: 80px;
       word-wrap: break-word;
+    } */
+    .nv {
+    overflow: hidden;
+    /* background-color: #333; */
+    background-color: #0359a8;
     }
+    .nv a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+  }
+  .nv a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  @media screen and (max-width: 400px) {
+    .nv a {
+      float: none;
+      width: 100%;
+    }
+  }
+  .nv{
+    font-size: 10px;
+  }
+
+  .footer {
+    padding: 12px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:#ddd;
+    color:black;
+    text-align: center;
+  }
+
 
   </style>
 
 </head>
-
 <body>
+  <div class="nv">
   <nav class='row'>
-    <h3 class="col"> <a href="/profile" class="">Profile</a></h3>
-    <h3 class="col"> <a href="/profile/updateprofile">Update profile</a></h3>
-    <h3 class="col"> <a href="/profile/appoinment">Book-appointment</a></h3>
-    <h3 class="col"> <a href="" class="">Medical History</a></h3>
-    <h3 class="col"> <a href="/logout" class="">Logout</a></h3>
-  </nav>
+    <h4 class="col"> <a href="/profile" class="">PROFILE</a></h4>
+    <h4 class="col"> <a href="/profile/updateprofile">UPDATE PROFILE</a></h4>
+    <h4 class="col"> <a href="/profile/appoinment">BOOK APPOINMENT</a></h4>
+    <h4 class="col"> <a href="" class="">MEDICAL HISTORY</a></h4>
+    <h4 class="col"> <a href="/logout" class="">LOGOUT</a></h4>
+  </nav></div>
 
+  <fieldset class=" px-4 py-4">
+    <form class="border border-warning px-4 py-4 " action="/auth/adminprofile" method="POST">
 
+  <form class="row g-3" action="/profile/updateprofile" method="post" >
+    <div class="row mb-3">
+    <div class="">
+      <br>
+      <label for="">Select profile pic</label>
+      <input type="file" name="profilepic" id="propic" value="">
+    </div>
+    <div class="">
+      <label for="inputEmail3">Email</label>
+      <input type="text" name="email" class="form-control" id="inputEmail3" value=<%=user.email %>>
+    </div>
+  </div>
+  <div class="row mb-3">
+  <div class="">
+    <label for="dob">Enter your date of birth</label>
+    <input type="date" class="form-control" name="dob" value="">
+  </div></div>
+  <div class="row mb-3">
+  <div class="alergy">
+    <input type="checkbox" class="myCheck" name="" value="" onclick="valueChange()">
+    <label for="allergies">Do you have any alergies</label>
+  </div>
+  <div class="alergytext"  style="display :none">
+    <label for="">Please enter your alergy and reaction</label>
+    <input type="text" class="form-control" name="alergy" value="">
+  </div></div>
+  <div class="row mb-3">
+  <div class="">
+    <input type="checkbox" name="" class="premedcheck"value="" onclick="premed()">
+    <label for="">Do you take any permenant medication</label>
+  </div>
+  <div class="premed" style="display:none">
+    <label for="">Please enter the prescribed medicine and the reason</label>
+    <input type="text" class="form-control" name="permed" value="">
+  </div>
+</div></div>
+</div>
+<button type="submit" class="btn btn-primary">SUBMIT</button>
+
+</form></form>
+</fieldset>
+    
+    
   <div class="row">
 
-    <!-- INFORMATION -->
+    <!-- INFORMATION
 
     <form class="" action="/profile/updateprofile" method="post">
 
@@ -65,7 +164,7 @@
         </div>
       </div>
       <button type="submit" name="button">Submit</button>
-    </form>
+    </form> -->
 
     <script type="text/javascript">
     function valueChange()
@@ -86,4 +185,8 @@ function premed()
 
 
     </script>
+    <div class="footer">
+      <h2>Footer</h2>
+      </div>
+    </body>
 </html>

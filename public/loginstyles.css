@@ -1,5 +1,5 @@
 body{
-  background-image: url(loginlandingpage6.jpg);
+  background-image: url(background.jpg);
 
   background-size: cover;
 
@@ -22,10 +22,12 @@ input{
   position: relative;
 }
 button{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: large;
   width:92%;
   color: white;
   cursor:pointer;
-  background-color: black;
+  background-color:#0359a8;
   padding:14px 20px;
 }
 
@@ -35,26 +37,59 @@ button:hover {
 }
 .imageavatar{
   width:250px;
-  height: :500%;
+  height: 350px;
 }
 .imageconatainer{
   text-align:center;
 }
 
 .sectionname{
-  color: red;
+  color:white;
 }
 .navbar {
   overflow: hidden;
   /* background-color: #333; */
-  background-color: rgba(0,0,0,0.8);
+  background-color: #0359a8;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
 }
 .container{
-  margin: 5% 20% 20%;
+  
+  margin: 20px;
 
 }
 .box{
-
+  
   background-color: rgba(0,0,0,0.3);
-  margin:10% 10% 10% 10%;
+  margin: 10%;
+}
+.footer {
+  padding: 12px;
+  /* position: fixed; */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:#ddd;
+  color:black;
+  text-align: center;
 }
