@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title></title>
     <style>
       .border-warning{
@@ -32,7 +33,7 @@
     background-color: #ddd;
     color: black;
   }
-  
+
   @media screen and (max-width: 400px) {
     .navbar a {
       float: none;
@@ -113,18 +114,13 @@
     </style>
   </head>
   <body>
-    <div class="nv">
-      <nav class='row'>
-        <div class="col">
-          <div class="navbar">
-         <a href="/profile" class="">PROFILE</a>
-         <a href="/profile/updateprofile">UPDATE-PROFILE</a>
-         <a href="/profile/appoinment">BOOK-APPOINMENTS</a>
-         <a href="" class="">MEDICAL-HISTORY</a>
-         <a href="/logout" class="">LOGOUT</a>
-        </div></div>
-      </nav>
-      </div>
+    <div class="navbar">
+      <a href="/">HOME</a>
+      <a href="#">ABOUT</a>
+      <a href="#">SUGGESTIONS</a>
+      <a href="#">CONTACT US</a>
+      <a href="/logout" class="right">LOGOUT</a>
+    </div>
       <br>
     <h2 style="text-align: center;">APPOINMENTS</h2>
     <table class="content-table">
