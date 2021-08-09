@@ -82,11 +82,11 @@
       </div>
   <%}%>
   <fieldset class=" px-5 py-5">
-    <form class="border border-warning px-4 py-4 " action="/auth/adminprofile" method="POST">
+    <form class="border border-warning px-4 py-4 " action="/profile/appoinment" method="POST">
 
   <form class="row g-3" action="/profile/updateprofile" method="post" >
     <div class="row mb-3">
-    
+
     <div class="">
       <label for="inputEmail3">Select a doctor</label>
       <input  name="doctor" value=""list="doctorlist" class="form-control" id="inputEmail3" value=<%=user.email %>>
@@ -112,13 +112,13 @@
       </textarea>
     </div>
     <br>
-     &nbsp;&nbsp; 
-  
+     &nbsp;&nbsp;
+
 <button type="submit" class="btn btn-primary">BOOK APPOINMENT</button>
 
 </form></form>
 </fieldset>
-    
+
     <!-- <form class="" action="/profile/appoinment" method="post">
       <label for="">Select a  date:</label>
       <input type="date" name="date" value="">
