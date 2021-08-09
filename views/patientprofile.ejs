@@ -5,15 +5,35 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <title>Hello, world!</title>
   <style media="screen">
-    .nv {
+    p {
+  word-spacing: 500px;
+}
+    body {
+        content:"" ;
+      background-image: url("/static/bPP.png");
+      /* background-color: #cccccc; */
+      background-size: cover
+      }
+    .border-warning{
+        width: 500px;
+        margin-left: -130px;
+        /* margin: auto; */
+        /* padding: 10px; */
+        /* margin-top: 45px; */
+        margin-top: -20px;
+      }
+      .border-warning {
+    border-color: #023b70!important;
+}
+.navbar {
     overflow: hidden;
     /* background-color: #333; */
     background-color: #0359a8;
-    }
-    .nv a {
+  }
+  .navbar a {
     float: left;
     display: block;
     color: white;
@@ -21,22 +41,20 @@
     padding: 14px 20px;
     text-decoration: none;
   }
-  .nv a:hover {
+  .navbar a:hover {
     background-color: #ddd;
     color: black;
   }
+  
   @media screen and (max-width: 400px) {
-    .nv a {
+    .navbar a {
       float: none;
       width: 100%;
     }
   }
-  .nv{
-    font-size: 10px;
-  }
   .footer {
     padding: 12px;
-    position: fixed;
+    /* position: fixed; */
     left: 0;
     bottom: 0;
     width: 100%;
@@ -61,11 +79,14 @@
   </div> -->
   <div class="nv">
   <nav class='row'>
-    <h4 class="col"> <a href="/profile" class="">PROFILE</a></h4>
-    <h4 class="col"> <a href="/profile/updateprofile">UPDATE PROFILE</a></h4>
-    <h4 class="col"> <a href="/profile/appoinment">BOOK APPOINMENTS</a></h4>
-    <h4 class="col"> <a href="" class="">MEDICAL HISTORY</a></h4>
-    <h4 class="col"> <a href="/logout" class="">LOGOUT</a></h4>
+    <div class="col">
+      <div class="navbar">
+     <a href="/profile" class="">PROFILE</a>
+     <a href="/profile/updateprofile">UPDATE-PROFILE</a>
+     <a href="/profile/appoinment">BOOK-APPOINMENTS</a>
+     <a href="" class="">MEDICAL-HISTORY</a>
+     <a href="/logout" class="">LOGOUT</a>
+    </div></div>
   </nav>
   </div>
 
@@ -79,16 +100,52 @@
       <!-- INFORMATION -->
       <div class="col-sm-6">
         <div class="well">
-          <h3><span class="fa fa-user"></span>Local</h3>
+          <fieldset class=" px-5 py-5">
+            <form class="border border-warning px-4 py-4 " action="/auth/adminprofile" method="POST">
+          <h4><span class="fa fa-user"></span>Local</h4>
 
-          <p>
-            <img src="<%=user.picture%>" alt="">
-            <strong>NAME</strong>: <%= user.username %><br>
-            <strong>ID</strong>:<%= user.email %> <br>
-            <strong>Alergy</strong>:<%=profile.alergies%><br>
-            <strong>Medication</strong>:<%=profile.permenantmedication%><br>
-            <strong>Date Of birth</strong>:<%=profile.dob%>
-          </p>
+         
+            <img src="<%=user.picture%>" alt=""><br>
+            <!-- <div class="mb-3">
+              <label class="form-label" for="Username"><strong>NAME</strong>: <%= user.username %></label>
+              <input class="form-control" type="text" name="uname" value="" required>
+            </div> -->
+            <div class="mb-3">
+          <div class="">
+            <label for="Username"><strong>NAME</strong></label>
+            <input type="text" name="uname" class="form-control" id="Username" value=<%= user.username %>>
+          </div></div>
+
+          <div class="mb-3">
+            <div class="">
+              <label for="inputEmail3"><strong>ID</strong></label>
+              <input type="text" name="email" class="form-control" id="inputEmail3" value=<%=user.email %>>
+            </div></div>
+            <!-- <strong>ID</strong>:<%= user.email %> <br> -->
+
+            <div class="row mb-3">
+            <div class="alergytext">
+              <label for=""><strong>Alergy</strong></label>
+              <input type="text" name="alergy" class="form-control" id="alergy" value=<%=profile.alergies%>>
+            </div></div>
+            <!-- <strong>Alergy</strong>:<%=profile.alergies%><br> -->
+
+            <div class="row mb-3">
+              <div class="premed">
+                <label for="premed"><strong>Medication</strong></label>
+                <input type="text" name="premed" class="form-control" id="premed" value=<%=profile.permenantmedication%>>
+              </div></div>
+
+
+            <!-- <strong>Medication</strong>:<%=profile.permenantmedication%><br> -->
+
+            
+            <div class="">
+              <label for="dob"><strong>Date Of birth</strong></label>
+              <input type="date" class="form-control" name="dob" id="dob" value=<%=profile.dob%>>
+            </div></div>
+            <!-- <strong>Date Of birth</strong>:<%=profile.dob%>
+          </p> -->
 
         </div>
       </div>
@@ -99,7 +156,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-
+</fieldset>
+</form>
   <div class="footer">
   <h2>Footer</h2>
   </div>

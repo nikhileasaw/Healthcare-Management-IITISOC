@@ -17,6 +17,8 @@ router.use(session({
 router.use(flush());
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: false }));
+// router.use('/static', express.static(__dirname + '/public'));
+// router.set("views", path.join(__dirname, "/views"));
 const checkAuth=(req,res,next)=>{
   if(!req.user){
     res.redirect('/auth/login')

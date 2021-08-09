@@ -6,6 +6,12 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <title></title>
   <style>
+    body {
+        content:"" ;
+      background-image: url("/static/bA.jpg");
+      /* background-color: #cccccc; */
+      background-size: cover
+      }
     .border-warning{
         width: 500px;
         /* height: 200px; */
@@ -16,12 +22,12 @@
       .border-warning {
     border-color: #023b70!important;
 }
-.nv {
+.navbar {
     overflow: hidden;
     /* background-color: #333; */
     background-color: #0359a8;
-    }
-    .nv a {
+  }
+  .navbar a {
     float: left;
     display: block;
     color: white;
@@ -29,23 +35,20 @@
     padding: 14px 20px;
     text-decoration: none;
   }
-  .nv a:hover {
+  .navbar a:hover {
     background-color: #ddd;
     color: black;
   }
+  
   @media screen and (max-width: 400px) {
-    .nv a {
+    .navbar a {
       float: none;
       width: 100%;
     }
   }
-  .nv{
-    font-size: 10px;
-  }
-
   .footer {
     padding: 12px;
-    /* position: fixed; */
+    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -70,12 +73,16 @@
 <body>
   <div class="nv">
     <nav class='row'>
-      <h4 class="col"> <a href="/profile" class="">PROFILE</a></h4>
-      <h4 class="col"> <a href="/profile/updateprofile">UPDATE PROFILE</a></h4>
-      <h4 class="col"> <a href="/profile/appoinment">BOOK APPOINMENT</a></h4>
-      <h4 class="col"> <a href="" class="">MEDICAL HISTORY</a></h4>
-      <h4 class="col"> <a href="/logout" class="">LOGOUT</a></h4>
-    </nav></div>
+      <div class="col">
+        <div class="navbar">
+       <a href="/profile" class="">PROFILE</a>
+       <a href="/profile/updateprofile">UPDATE-PROFILE</a>
+       <a href="/profile/appoinment">BOOK-APPOINMENTS</a>
+       <a href="" class="">MEDICAL-HISTORY</a>
+       <a href="/logout" class="">LOGOUT</a>
+      </div></div>
+    </nav>
+    </div>
     <% if(message.length>0){ %>
       <div class="alert alert-success">
             <%=message%>
