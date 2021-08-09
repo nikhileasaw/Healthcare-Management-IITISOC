@@ -45,7 +45,7 @@
     background-color: #ddd;
     color: black;
   }
-  
+
   @media screen and (max-width: 400px) {
     .navbar a {
       float: none;
@@ -102,9 +102,9 @@
         <div class="well">
           <fieldset class=" px-5 py-5">
             <form class="border border-warning px-4 py-4 " action="/auth/adminprofile" method="POST">
-          <h4><span class="fa fa-user"></span>Local</h4>
+          <h4><span class="fa fa-user"></span>PROFILE</h4>
 
-         
+
             <img src="<%=user.picture%>" alt=""><br>
             <!-- <div class="mb-3">
               <label class="form-label" for="Username"><strong>NAME</strong>: <%= user.username %></label>
@@ -139,7 +139,7 @@
 
             <!-- <strong>Medication</strong>:<%=profile.permenantmedication%><br> -->
 
-            
+
             <div class="">
               <label for="dob"><strong>Date Of birth</strong></label>
               <input type="date" class="form-control" name="dob" id="dob" value=<%=profile.dob%>>

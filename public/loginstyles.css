@@ -76,12 +76,18 @@ button:hover {
 .container{
 
   margin: 20px;
+  position: relative;
 
 }
 .box{
 
   background-color: rgba(0,0,0,0.5);
-  margin: 10%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
 }
 .footer {
   padding: 12px;
